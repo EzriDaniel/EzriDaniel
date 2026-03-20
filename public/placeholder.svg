@@ -1,0 +1,9 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a1a1a"/>
+  <text x="200" y="150" fill="#00ff41" font-family="monospace" font-size="16" text-anchor="middle">
+    Project Image
+  </text>
+  <text x="200" y="180" fill="#00ff41" font-family="monospace" font-size="12" text-anchor="middle">
+    Add your project screenshot here
+  </text>
+</svg>

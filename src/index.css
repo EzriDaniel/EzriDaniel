@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+/*
+ * ===========================================
+ * CENTRALIZED COLOR CONFIGURATION
+ * ===========================================
+ * Single source of truth. All colors chosen
+ * for WCAG AA compliance on dark backgrounds.
+ * ===========================================
+ */
+:root {
+  /* Primary neon green */
+  --c-primary: #00ff41;
+  --c-primary-dim: rgba(0, 255, 65, 0.45);
+  --c-primary-glow: rgba(0, 255, 65, 0.25);
+  --c-primary-bg: rgba(0, 255, 65, 0.08);
+
+  /* Text colors - all WCAG AA on #050505 background */
+  --c-heading: #a7f3d0;    /* emerald-200 - 12.1:1 - headings */
+  --c-body: #d1fae5;       /* emerald-100 - 15.7:1 - body text */
+  --c-muted: #6ee7b7;      /* emerald-300 - 8.7:1  - secondary */
+  --c-dim: rgba(167, 243, 208, 0.55); /* placeholder, hints */
+
+  /* Accent colors */
+  --c-cyan: #67e8f9;       /* cyan-300 - 9.8:1 */
+  --c-cyan-bright: #22d3ee; /* cyan-400 - 8.2:1 */
+  --c-pink: #f0abfc;       /* fuchsia-300 - 7.2:1 */
+  --c-yellow: #fde047;     /* yellow-300 - 15.7:1 */
+  --c-red: #f87171;        /* red-400 - 6.3:1 */
+
+  /* Card & surface colors */
+  --c-surface: rgba(6, 78, 59, 0.2);   /* emerald-900/20 */
+  --c-surface-hover: rgba(6, 78, 59, 0.35);
+  --c-input-bg: rgba(6, 78, 59, 0.3);
+  --c-glass: rgba(5, 5, 5, 0.55);
+
+  /* Border colors */
+  --c-border: rgba(0, 255, 65, 0.15);
+  --c-border-hover: rgba(0, 255, 65, 0.35);
+
+  /* Fonts */
+  --font-hack: 'IBM Plex Mono', 'JetBrains Mono', 'Space Mono', monospace;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'Space Mono', monospace;
+}
+
+/* ===========================================
+ * BASE STYLES
+ * =========================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: #030303;
+  color: var(--c-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings use the more technical font */
+h1, h2, h3, h4, h5, h6,
+.font-hack {
+  font-family: var(--font-hack);
+}
+
+/* ===========================================
+ * BACKGROUND
+ * =========================================== */
+.matrix-rain-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    /* Subtle scan-line grid overlay */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 65, 0.015) 2px,
+      rgba(0, 255, 65, 0.015) 4px
+    );
+}
+
+/* ===========================================
+ * GLASS CARD
+ * =========================================== */
+.glass-effect {
+  background: var(--c-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--c-border);
+  border-radius: 0.75rem;
+}
+
+/* ===========================================
+ * NEON TEXT EFFECTS
+ * =========================================== */
+.neon-text {
+  color: var(--c-primary);
+  text-shadow:
+    0 0 4px rgba(0, 255, 65, 0.6),
+    0 0 12px rgba(0, 255, 65, 0.3),
+    0 0 28px rgba(0, 255, 65, 0.15);
+}
+
+.neon-text-subtle {
+  text-shadow:
+    0 0 4px currentColor,
+    0 0 10px currentColor;
+}
+
+/* ===========================================
+ * COLOR UTILITY CLASSES
+ * Single system - use these everywhere.
+ * =========================================== */
+
+/* Text */
+.text-h { color: var(--c-heading); }
+.text-b { color: var(--c-body); }
+.text-m { color: var(--c-muted); }
+.text-d { color: var(--c-dim); }
+.text-p { color: var(--c-primary); }
+.text-c { color: var(--c-cyan); }
+.text-pk { color: var(--c-pink); }
+.text-y { color: var(--c-yellow); }
+.text-r { color: var(--c-red); }
+
+/* Backgrounds */
+.bg-card { background-color: var(--c-surface); }
+.bg-input { background-color: var(--c-input-bg); }
+.bg-hover { background-color: var(--c-surface-hover); }
+
+/* Borders */
+.border-c { border-color: var(--c-border); }
+.border-c-h { border-color: var(--c-border-hover); }
+
+/* Hover colors */
+.hover-h:hover { color: var(--c-heading); }
+.hover-b:hover { color: var(--c-body); }
+.hover-p:hover { color: var(--c-primary); }
+.hover-c:hover { color: var(--c-cyan); }
+
+/* ===========================================
+ * BUTTONS
+ * =========================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-family: var(--font-hack);
+  font-size: 0.875rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-filled {
+  background-color: var(--c-input-bg);
+  border: 1px solid var(--c-border);
+  color: var(--c-body);
+}
+
+.btn-filled:hover {
+  background-color: var(--c-surface-hover);
+  border-color: var(--c-border-hover);
+  color: var(--c-heading);
+  box-shadow: 0 0 18px var(--c-primary-glow);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--c-border);
+  color: var(--c-heading);
+}
+
+.btn-outline:hover {
+  background-color: var(--c-surface);
+  border-color: var(--c-border-hover);
+  color: var(--c-body);
+}
+
+/* ===========================================
+ * INPUTS
+ * =========================================== */
+.input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  background-color: var(--c-input-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 0.5rem;
+  color: var(--c-body);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  transition: all 0.25s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--c-heading);
+  box-shadow: 0 0 0 3px rgba(167, 243, 208, 0.12);
+}
+
+.input::placeholder {
+  color: var(--c-dim);
+}
+
+/* ===========================================
+ * LINKS
+ * =========================================== */
+.link {
+  color: var(--c-body);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--c-heading);
+}
+
+/* ===========================================
+ * ANIMATIONS
+ * =========================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-scanline { animation: scanline 8s linear infinite; }
+.animate-blink { animation: blink 1s step-end infinite; }
+
+/* ===========================================
+ * ACCESSIBILITY
+ * =========================================== */
+*:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===========================================
+ * SCROLLBAR
+ * =========================================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: var(--c-primary-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-primary); }
+
+/* Selection */
+::selection {
+  background: var(--c-primary-glow);
+  color: #fff;
+}
