@@ -28,7 +28,7 @@ A modern, interactive portfolio website with a hacker/matrix theme, built with R
 | React Router DOM | Client-side Routing |
 
 ## Live
-Check website here [https://ezridanielgweth.vercel.app/](https://ezridanielgweth.vercel.app/) to view the portfolio.
+View portfolio here [https://ezridanielgweth.vercel.app/](https://ezridanielgweth.vercel.app/)
 
 ## Getting Started
 
