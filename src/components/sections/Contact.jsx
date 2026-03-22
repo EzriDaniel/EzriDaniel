@@ -2,16 +2,31 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '', _gotcha: '' });
   const [status, setStatus] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    await new Promise(r => setTimeout(r, 1500));
-    setStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setStatus(null), 3000);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Submission failed');
+
+      setStatus('success');
+      // reset form
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      setStatus('error'); // you can show an error message if you wish
+    } finally {
+      setTimeout(() => setStatus(null), 3000);
+    }
   };
 
   return (
@@ -83,6 +98,17 @@ function Contact() {
               required
             />
           </div>
+          {/* Honeypot – invisible to users, but bots will fill it */}
+          <input
+          type="text"
+          name="_gotcha"
+          value={formData._gotcha}
+          onChange={e => setFormData({ ...formData, _gotcha: e.target.value })}
+          autoComplete="off"
+          tabIndex={-1}
+          style={{ position: 'absolute', left: '-9999px' }}
+          aria-hidden="true"
+          />
           <button type="submit" disabled={status === 'sending'} className="btn btn-filled w-full">
             {status === 'sending' ? 'Sending...' : 'Send Message'}
           </button>
@@ -90,6 +116,9 @@ function Contact() {
         {status === 'success' && (
           <p className="text-h text-sm mt-4 text-center">Message sent successfully!</p>
         )}
+        {status === 'error' && (
+          <p className="text-r text-sm mt-2">Sorry, something went wrong. Please try again later.</p>
+  )}
       </motion.div>
 
       {/* Contact info cards */}
