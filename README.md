@@ -27,6 +27,9 @@ A modern, interactive portfolio website with a hacker/matrix theme, built with R
 | Framer Motion | Animations |
 | React Router DOM | Client-side Routing |
 
+## Live
+View portfolio here [https://ezridanielgweth.vercel.app/](https://ezridanielgweth.vercel.app/)
+
 ## Getting Started
 
 ### Prerequisites
