@@ -133,6 +133,67 @@ A tweet introducing your portfolio with link to your website.
 - Comment on industry trends
 - Use relevant hashtags: #AgriTech #LegalTech #FlutterDev #SoftwareEngineering #Innovation
 
+## Discord (ezridgweth or similar - if applicable)
+
+### Profile Optimization
+- **Username**: ezridgweth (or similar professional variation)
+- **Display Name**: Ezri Daniel Gweth
+- **About Me**:
+  ```
+  Software Engineer & Full Stack Developer | Founder @ Gweens Craft Ltd
+  Building AgriTech, Legal AI & Environmental Tech solutions
+  Nairobi, Kenya • ezridgweth@gweenscraft.co.ke
+  ```
+- **Status**: Set to "Online" or custom status showing current project/focus
+- **Avatar**: Professional headshot or logo (consistent with other profiles)
+- **Banner**: Optional - could feature your portfolio screenshot or tech stack
+
+### Server Participation
+- Join relevant developer communities (freeCodeCamp, The Odin Project, etc.)
+- Participate in African developer discords if available
+- Engage in tech-specific servers (JavaScript, React, Web Development)
+- Consider creating your own community server for your projects/projects you mentor
+
+### Content Strategy
+- Share development progress and ask for feedback when appropriate
+- Help others with technical questions
+- Share resources and tutorials you find valuable
+- Participate in voice chats for pair programming or tech discussions
+- Keep conversations professional and constructive
+
+## Reddit (u/EzriDaniel or similar - if applicable)
+
+### Profile Optimization
+- **Username**: u/EzriDaniel (or similar professional variation)
+- **Display Name**: Ezri Daniel Gweth
+- **About Me**:
+  ```
+  Software Engineer | Full Stack Developer
+  Founder @ Gweens Craft Ltd | Nairobi, Kenya
+  Building tech solutions for agriculture, legal, and environmental sectors
+  ezridgweth@gweenscraft.co.ke | github.com/EzriDaniel
+  ```
+- **Profile Picture**: Professional headshot or logo (consistent with other profiles)
+- **Banner**: Optional - could feature your tech stack or project screenshots
+
+### Subreddit Participation
+- r/programming - Share development insights and ask thoughtful questions
+- r/webdev - Discuss frontend/backend technologies and best practices
+- r/reactjs - Share React projects and learn from community
+- r/flutedev - If using Flutter for mobile components
+- r/kenya - Local community engagement
+- r/Africa - Broader regional tech discussions
+- r/learnprogramming - Help beginners when possible
+- Consider creating a subreddit for your projects if they gain significant traction
+
+### Content Strategy
+- Share project updates and milestones (following subreddit self-promotion rules)
+- Participate in discussions with thoughtful, well-researched comments
+- Share useful resources and tutorials
+- Ask for feedback on specific technical challenges
+- Showcase completed projects with detailed explanations
+- Engage in AMAs (Ask Me Anything) if appropriate for your expertise
+
 ## TikTok (@EzriDaniel - if applicable)
 
 ### Bio

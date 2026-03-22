@@ -177,3 +177,4 @@ This project is for personal portfolio use. Customize it for your own portfolio 
 - Email: ezridgweth@gweenscraft.co.ke
 - LinkedIn: [linkedin.com/in/ezri-gweth-770974207](https://www.linkedin.com/in/ezri-gweth-770974207)
 - GitHub: [github.com/EzriDaniel](https://github.com/EzriDaniel)
+
