@@ -42,7 +42,7 @@ export const personalInfo = {
     "Wildlife Conservation",
     "Climate change resilience measures",
     "Real-world problem solving using Tech",
-    "Reading informative books & doing tech discoveries - Everyday",
+    "Reading informative books & doing tech discoveries",
     "Musician (Piano pro level player)"
   ]
 };
